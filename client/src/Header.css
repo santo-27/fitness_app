@@ -1,0 +1,16 @@
+.headerStyles{
+    background-color: gray;
+}
+
+.Home-day-style{
+    padding-left: 10px;
+    /* font-weight: bold; */
+    font-size: large;
+}
+
+.montserrat{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }

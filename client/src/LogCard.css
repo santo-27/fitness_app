@@ -1,0 +1,21 @@
+.LogCard-card{
+    background-color: gainsboro;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.LogCard-heading{
+   align-self: center;
+   align-content: center;
+  
+}
+
+
+
+.montserrat{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
