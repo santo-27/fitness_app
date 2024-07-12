@@ -6,34 +6,19 @@ import { Line } from "react-chartjs-2";
 //we send here the id and allData
 function Graph(props) {
 
-    // const data = props.data;
-    const [data, setData] = useState([])
-    // const refined = [];
+
+    const [data, setData] = useState(['asd'])
+
     const {user} = useContext(AuthContext)
 
-
-
-    // for(let i = 0; i < data.length; i++){
-    //     if(data[i].workout ===  props.workout){
-    //         refined.push(data[i])
-
-    //     }
-
-    // }
     const getWorkoutData = async (email, workout) => {
         await axios.post('/workoutdata', {email:email, workout:workout}).then(res => {
-            setData(res.data.rows)
+            setData(res.data.response.rows)
+            console.log(data)
         })
 
     }
 
-    useEffect(() => {
-        if(data.length == 0) {
-            getWorkoutData(user.email, props.workout)
-        }
-    }, [data])
-
-    // var xyValues = []
     var dataset = {
       labels: [],
       datasets: [
@@ -46,24 +31,23 @@ function Graph(props) {
       ],
       };
 
-    for(let i = data.length - 1; i >= 0; i++){
-      dataset.labels.push(data[i].date)
-      dataset.datasets[0].data.push(data[i].weight * data[i].reps)
-        // xyValues.push({x:data[i].date, y:()})
-    }
-
-
-    // const chart =  new Chart("chart", {
-    //     type: "scatter",
-    //     data: {
-    //       datasets: [{
-    //         pointRadius: 4,
-    //         pointBackgroundColor: "rgba(0,0,255,1)",
-    //         data: xyValues
-    //       }]
-    //     }
+    useEffect(() => {
+        if(data.length == 0) {
+            getWorkoutData('candyman270705@gmail.com', props.workout)
+            console.log('hello')
+            for(let i = data.length - 1; i >= 0; i++){
+              dataset.labels.push(data[i].date)
+              dataset.datasets[0].data.push(data[i].weight * data[i].reps)
         
-    //   });
+            }
+        }
+    }, [data])
+
+
+
+    
+
+
   return (
     data.length ? (
       <div>

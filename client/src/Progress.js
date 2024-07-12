@@ -11,7 +11,7 @@ function Progress() {
     const [data, setData] = useState( () => new Set());
 
     const [allData, setAllData] = useState([]);
-
+    console.log(user);
     const get_all_workouts = async (email, d) => {
         var raw_workouts = []
         try{
@@ -40,7 +40,7 @@ function Progress() {
     useEffect(() => {
         if(data.size == 0){
             get_all_workouts(user.email, data)
-            console.log(data)
+            // console.log(data)
             //     setData(ret);
             //     console.log(data)
             
@@ -54,9 +54,9 @@ function Progress() {
     <div>
         <Header />
         {data.size ? (
-            Array.from(data).map((item, i) => {
+            Array.from(data).map((item) => {
                 return (
-                    <Graph workout = {item} data = {allData} id = {i} /> 
+                    <Graph workout = {item} data = {allData} /> 
                 )
             })
         ):(<div></div>)
