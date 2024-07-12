@@ -1,7 +1,8 @@
 import {React, useEffect, useState, useContext} from 'react';
 import axios from 'axios';
 import AuthContext from './authContext';
-import Chart from "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js";
+import Chart from "chart.js/auto";
+import { Line } from "react-chartjs-2";
 //we send here the id and allData
 function Graph(props) {
 
@@ -32,31 +33,47 @@ function Graph(props) {
         }
     }, [data])
 
-    var xyValues = []
+    // var xyValues = []
+    var dataset = {
+      labels: [],
+      datasets: [
+      {
+      label: "My First dataset",
+      backgroundColor: "rgb(255, 99, 132)",
+      borderColor: "rgb(255, 99, 132)",
+      data: [],
+      },
+      ],
+      };
 
     for(let i = data.length - 1; i >= 0; i++){
-        xyValues.push({x:data[i].date, y:(data[i].weight * data[i].reps)})
+      dataset.labels.push(data[i].date)
+      dataset.datasets[0].data.push(data[i].weight * data[i].reps)
+        // xyValues.push({x:data[i].date, y:()})
     }
 
 
-    const chart =  new Chart("myChart", {
-        type: "scatter",
-        data: {
-          datasets: [{
-            pointRadius: 4,
-            pointBackgroundColor: "rgba(0,0,255,1)",
-            data: xyValues
-          }]
-        }
+    // const chart =  new Chart("chart", {
+    //     type: "scatter",
+    //     data: {
+    //       datasets: [{
+    //         pointRadius: 4,
+    //         pointBackgroundColor: "rgba(0,0,255,1)",
+    //         data: xyValues
+    //       }]
+    //     }
         
-      });
+    //   });
   return (
-    <div>
-        <canvas id="chart" style="width:100%;max-width:700px">
-
-        </canvas>
+    data.length ? (
+      <div>
+        <Line data={dataset} />
     </div>
+  ) : (
+    <div></div>
   )
+    )
+    
 }
 
 export default Graph

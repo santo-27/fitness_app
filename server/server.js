@@ -130,7 +130,7 @@ app.post("/workoutdata", (req, res) => {
         const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
         res.json({response:response});
     }
-    get_workoutdata(req.body.email, req.body.email)
+    get_workoutdata(req.body.email, req.body.workout)
 });
 
 app.listen(port, ()=> {
