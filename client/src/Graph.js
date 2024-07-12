@@ -7,19 +7,23 @@ import { Line } from "react-chartjs-2";
 function Graph(props) {
 
 
-    const [data, setData] = useState(['asd'])
+    const [workout_data, setWData] = useState([]);
 
     const {user} = useContext(AuthContext)
 
     const getWorkoutData = async (email, workout) => {
-        await axios.post('/workoutdata', {email:email, workout:workout}).then(res => {
-            setData(res.data.response.rows)
-            console.log(data)
-        })
+        const res = await axios.post('/workoutdata', {email:email, workout:workout});
+        
+        return await res.data.response.rows
+  
+        // console.log(res.data.response.rows)
+        
+            
+       
 
     }
 
-    var dataset = {
+    const [dataset, setDataset] = useState({
       labels: [],
       datasets: [
       {
@@ -29,28 +33,59 @@ function Graph(props) {
       data: [],
       },
       ],
-      };
+      });
 
     useEffect(() => {
-        if(data.length == 0) {
-            getWorkoutData('candyman270705@gmail.com', props.workout)
-            console.log('hello')
-            for(let i = data.length - 1; i >= 0; i++){
-              dataset.labels.push(data[i].date)
-              dataset.datasets[0].data.push(data[i].weight * data[i].reps)
-        
+        if(user && props.workout) {
+            getWorkoutData(user.email, props.workout).then(resp => {
+              // var res_2 = res
+              setWData(resp)
+              
+              
+            })
+            // setData(res)
+              // console.log(workout_data)
+              
             }
-        }
-    }, [data])
+            
+        
+    }, [user && props.workout])
 
+    useEffect(() => {
+      if (workout_data.length > 0) {
+        console.log(workout_data)
+        var temp = {
+          labels: [],
+          datasets: [
+          {
+          label: "My First dataset",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [],
+          },
+          ],
+          }
+          console.log(dataset)
+        for(let i = workout_data.length - 1; i >= 0; i--){
+            temp.labels.push(workout_data[i].date)
+            temp.datasets[0].data.push(workout_data[i].weight * workout_data[i].reps)
+    
+        }
+        setDataset(temp)
+        console.log(temp)
+      }
+
+    }, [workout_data])
+    
 
 
     
 
 
   return (
-    data.length ? (
+    workout_data.length ? (
       <div>
+        <h3>{props.workout}</h3>
         <Line data={dataset} />
     </div>
   ) : (

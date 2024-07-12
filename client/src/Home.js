@@ -38,6 +38,7 @@ function Home() {
     
       get_data(user.email).then(response => {
         setRes(response.rows);
+        console.log(res)
 
         if(parseInt(response.nums_rows) > 0){
           setStatus(false);
