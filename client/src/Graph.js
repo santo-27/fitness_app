@@ -3,6 +3,7 @@ import axios from 'axios';
 import AuthContext from './authContext';
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
+import "./Graph.css"
 //we send here the id and allData
 function Graph(props) {
 
@@ -84,10 +85,10 @@ function Graph(props) {
 
   return (
     workout_data.length ? (
-      <div>
+      <div className='Graph-graph-canvas'>
         <h3>{props.workout}</h3>
         <Line data={dataset} />
-    </div>
+      </div>
   ) : (
     <div></div>
   )
