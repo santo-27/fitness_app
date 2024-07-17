@@ -2,7 +2,12 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import pg from "pg";
+import {GoogleGenerativeAI} from "@google/generative-ai"
 
+
+const gemini_key = "AIzaSyB6LHvWtiUSaqT6zEbaeScUJv6YzOovw8Q"
+const genAI = new GoogleGenerativeAI(gemini_key);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
 const {Client} = pg;
 const client = new Client( {
@@ -21,6 +26,7 @@ const client = new Client( {
 
 const app = express();
 const port = 5000;
+
 
 
 app.use(cors());

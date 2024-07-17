@@ -59,7 +59,7 @@ function Graph(props) {
           labels: [],
           datasets: [
           {
-          label: "My First dataset",
+          label: "progress",
           backgroundColor: "rgb(255, 99, 132)",
           borderColor: "rgb(255, 99, 132)",
           data: [],
@@ -86,7 +86,7 @@ function Graph(props) {
   return (
     workout_data.length ? (
       <div className='Graph-graph-canvas'>
-        <h3>{props.workout}</h3>
+        <h3 className='inconsolata'>{props.workout} :</h3>
         <Line data={dataset} />
       </div>
   ) : (

@@ -9,6 +9,7 @@ import Login from './Login/Login.js';
 import NewWorkouts from './NewWorkouts';
 import LogWorkout from './LogWorkout';
 import Progress from './Progress.js';
+import Assistant from './Assistant.js';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='new_workout' element={<NewWorkouts/>} />
         <Route path='/log_workout' element={<LogWorkout />} />
         <Route path='/progress' element={<Progress />} />
+        <Route path='/assistant' element={<Assistant />} />
       </Routes>
       </AuthProvider>
     </div>
