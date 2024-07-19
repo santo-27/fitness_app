@@ -1,0 +1,20 @@
+.Assistant-sendButton{
+    border: none;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: white;
+    size: 50px;
+    margin: 5px;
+}
+
+.Assistant-whole{
+    /* padding: 10px; */
+    position: absolute;
+    bottom: 0px;
+    margin: 20px;
+}
+
+.Assistant-prompt{
+    border-radius: 7px;
+    /* text-justify: auto; */
+}

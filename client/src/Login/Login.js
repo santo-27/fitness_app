@@ -5,6 +5,7 @@ import {Form, Button, Row, Col} from 'react-bootstrap';
 import axios from "axios";
 import { redirect , useNavigate} from "react-router-dom";
 import AuthContext from '../authContext';
+import "./Login.css"
 
 
 function Login() {
@@ -70,22 +71,24 @@ function Login() {
     
     <div>
         <Header />
-        {!(user && user.email) ? (<div className='py-5 px-5 justify-content-center'>
-        <Row>
-        <Col md={6}>
+        {!(user && user.email) ? (<div className='py-5 px-5 justify-content-center '>
+        {/* <Row> */}
+        {/* <Col md={6}> */}
             
             <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className=''>Email address :  </Form.Label>
             <Form.Control type="email" placeholder="Enter email" name='email' value={formData.email} onChange={handleChange}/>
+           
             <Form.Text className="text-muted">
             We'll never share your email with anyone else.
             </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label >Password : </Form.Label>
             <Form.Control type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange}/>
+            
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
@@ -95,11 +98,11 @@ function Login() {
         </Button>
         {message && <p>{message}</p>}
         </Form>
-    </Col>
+    {/* </Col> */}
  
-    </Row>
+    {/* </Row> */}
     </div>) : (
-      <div>
+      <div className='Login-center'>
         <p>Do u wanna logout</p>
         <button type="button" class="btn btn-danger" onClick={handleLogout}>Logout</button>
 

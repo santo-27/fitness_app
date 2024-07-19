@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import pg from "pg";
@@ -12,7 +12,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 const {Client} = pg;
 const client = new Client( {
     user: 'postgres',
-    password: 'santo',
+    password: 'santo@27',
     host: 'localhost',
     port: 5432,
     database: 'fit_web',
@@ -25,7 +25,7 @@ const client = new Client( {
 
 
 const app = express();
-const port = 5000;
+const port = 6000;
 
 
 
@@ -138,6 +138,21 @@ app.post("/workoutdata", (req, res) => {
     }
     get_workoutdata(req.body.email, req.body.workout)
 });
+
+app.post("/gemini_prompt", (req, res) => {
+    const get_gemini = async (prompt) => {
+        var res1 = await model.generateContent(prompt)
+        console.log("hey");
+        console.log(res1);
+        var res2 = await res1.response
+        var text = res2.text()
+        console.log(text)
+        res.json({result:text});
+    
+    }
+    get_gemini(req.body.prompt)
+    
+})
 
 app.listen(port, ()=> {
     console.log(`listening at port ${port}`);

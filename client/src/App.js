@@ -9,11 +9,18 @@ import Login from './Login/Login.js';
 import NewWorkouts from './NewWorkouts';
 import LogWorkout from './LogWorkout';
 import Progress from './Progress.js';
-import Assistant from './Assistant.js';
+import Assistant from './Assistant/Assistant.js';
+import "./App.css"
 
 function App() {
+  // return(
+  //   <div>
+  //     <h3>hey</h3>
+  //   </div>
+    
+  // )
   return (
-    <div>
+    <div className='bg-color-App'>
      <AuthProvider>
       <Routes>
         <Route exact path = "/" element={<Login />}/>

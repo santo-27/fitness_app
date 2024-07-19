@@ -22,7 +22,7 @@ function Header() {
             <Nav.Link as={Link} to="/home" >Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/log_workout">Log workout</Nav.Link>
-            <Nav.Link as={Link} to="/assisstant">Ai Assistant</Nav.Link>
+            <Nav.Link as={Link} to="/assistant">Ai Assistant</Nav.Link>
             
             
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
