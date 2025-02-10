@@ -12,8 +12,16 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('/api/login', { email, password });
-      setUser(response.data.user);
+      // FOR THE SAKE OF FRONTENDD
+
+      // COMMENTED(WORKS)
+      // const response = await axios.post('/api/login', { email, password });
+      // console.log(response)
+      // setUser(response.data.user);
+
+      //FOR EASE OF USE FOR FRONTEND
+      setUser({email:'sample@gmail.com'})
+      //COMMENT THIS IN FUTUREE
     } catch (error) {
       console.error('Error logging in:', error);
     }
