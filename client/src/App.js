@@ -13,12 +13,6 @@ import Assistant from './Assistant/Assistant.js';
 import "./App.css"
 
 function App() {
-  // return(
-  //   <div>
-  //     <h3>hey</h3>
-  //   </div>
-    
-  // )
   return (
     <div className='bg-color-App'>
      <AuthProvider>

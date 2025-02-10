@@ -13,12 +13,12 @@ function Graph(props) {
     const {user} = useContext(AuthContext)
 
     const getWorkoutData = async (email, workout) => {
+      
         const res = await axios.post('/workoutdata', {email:email, workout:workout});
         
         return await res.data.response.rows
   
-        // console.log(res.data.response.rows)
-        
+      
             
        
 
