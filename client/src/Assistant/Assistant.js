@@ -1,14 +1,22 @@
-import {React, useEffect, useState} from 'react';
+import {React, useEffect, useState, useRef} from 'react';
 import Header from '../Header';
 import "./Assistant.css";
 import axios from 'axios';
+import {Row, Col} from "react-bootstrap";
 
 function Assistant() {
   const [formData, setFormdata] = useState({
     prompt: ""
   })
+  const chatEndRef = useRef(null);
 
   const [chats, setChats] = useState([])
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chats]);
+
+  
   const [responses, setResponses] = useState([])
   const handleChange = (event) => {
    
@@ -41,14 +49,27 @@ function Assistant() {
   console.log(chats)
 
   return (
-    <div>
+    <div >
         <Header />
-        <div className ='Assistant-whole' >
+        <div className ='Assistant-whole chat-container' >
         {/* <p>{chats}</p> */}
         {chats.length ? <div>
           {chats.map((item,i) => {
-            return(<div>
-              <p>user: {item} || gemini : {responses[i]}</p>
+            return(<div >
+              <Row>
+                {/* <Col> */}
+                <div className='d-flex flex-row-reverse'>
+                <div className='Assistant-userCard  p-4' size={50}>{item}</div>
+                </div>
+                </Row>
+                {/* </Col> */}
+                {/* <Col> */}
+                <Row>
+                
+                <div className='Assistant-geminiCard' size={50}>{responses[i]}</div>
+                
+                {/* </Col> */}
+              </Row>
             </div>)
           })}
         </div> : <div> 

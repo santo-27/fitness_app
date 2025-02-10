@@ -10,6 +10,7 @@ const genAI = new GoogleGenerativeAI(gemini_key);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
 const {Client} = pg;
+
 const client = new Client( {
     user: 'postgres',
     password: 'santo@27',
