@@ -31,7 +31,9 @@ function NewWorkouts() {
       const name = formdata.name;
       const set = parseInt(formdata.set);
       const rep = parseInt(formdata.rep);
-      const response = await axios.post('/newworkout', {email:mail, name:name , set:set, rep:rep, day:formdata.day});
+      //COMMENTED FOR THE SAKE OF FRONT END
+      // const response = await axios.post('/newworkout', {email:mail, name:name , set:set, rep:rep, day:formdata.day});
+      //END OF COMMENT
       setMsg("posted the workout")
         
       
