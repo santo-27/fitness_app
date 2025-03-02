@@ -32,6 +32,11 @@ div.heading{
     color: black;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+}
+
 .form-label {
     font-size: 25px;
     
