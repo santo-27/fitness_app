@@ -1,8 +1,8 @@
 .heading{
-    border: 3px groove;
+    border: 3.5px groove;
     border-radius: 10px;
-    /* margin: 5px; */
-    border-color: rgb(67, 2, 105);
+    /* font-size:xx-large; */
+    border-color: rgb(255, 105, 105);
     padding: 10px;
     justify-content: center;
     background-color: rgb(177, 9, 9);
@@ -12,5 +12,6 @@
 .body_background {
     color: black;
     background: repeating-radial-gradient(rgb(135, 221, 255), rgb(66, 124, 155));
-    /* background: rgb(178, 159, 255); */
+    /* background-color: #007FE4; */
+    padding-bottom: 5px;
 }

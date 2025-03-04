@@ -1,0 +1,24 @@
+.body{
+    background:repeating-radial-gradient(rgb(135, 221, 255), rgb(66, 124, 155));
+    min-height: 100vh;
+}
+
+.content{
+    margin: 50px 0px;
+    color: black;
+    text-align: center;
+}
+h2.heading{
+    color: white;
+    background-color: rgb(177, 9, 9);
+    margin:0px;
+    padding: 10px;
+    text-align: center;
+    border: groove 3.5px rgb(255, 105, 105);
+    border-radius: 10px;
+}
+
+.row{
+    margin: 0;
+    width: 100%;
+}
