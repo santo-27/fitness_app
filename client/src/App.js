@@ -10,6 +10,7 @@ import NewWorkouts from './NewWorkouts';
 import LogWorkout from './LogWorkout';
 import Progress from './Progress.js';
 import Assistant from './Assistant/Assistant.js';
+import Feedback from './Feedback/Feedback.js';
 import "./App.css"
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/log_workout' element={<LogWorkout />} />
         <Route path='/progress' element={<Progress />} />
         <Route path='/assistant' element={<Assistant />} />
+        <Route path='/feedback' element={<Feedback />} />
       </Routes>
       </AuthProvider>
     </div>

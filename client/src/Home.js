@@ -7,9 +7,9 @@ import axios from 'axios';
 import AuthContext from './authContext';
 import GoalShow from './GoalShow/GoalShow';
 import HomeCSS from './Home.module.css'
+// import './Home.module.css'
 
 // import Idiot from './idiot_error';
-
 
 
 function Home() {
@@ -235,7 +235,7 @@ function Home() {
 
   
   return (
-    <div>
+    <div className={HomeCSS.body_background}>
         
         <Header/>
         
@@ -244,7 +244,7 @@ function Home() {
             <h1>hello new user</h1>
           </div>
         ) : (
-          <div >
+          <div>
             <h2 className={HomeCSS.heading}>Your plan for the day is:</h2>
             {/* <ol class="list-group list-group-numbered"> */}
             {days.map((day, j) => {

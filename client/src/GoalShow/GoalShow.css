@@ -1,6 +1,8 @@
 .card{
-    background-color: wheat;
-    border-radius: 10px;
+    color: black;
+    background-color: rgb(255, 242, 217);
+    border: 5px rgb(255, 183, 0) outset ;
+    border-radius: 100px;
     margin: 10px;
     padding: 10px;
     margin-left: 20px;

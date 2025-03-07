@@ -17,7 +17,7 @@ function GoalShow(props) {
             <div className="">Name of the Workout: {props.data.workout}</div>
             Number of sets - {props.data.sets}
         </div>
-        <span className="badge text-bg-primary rounded-pill">{props.data.reps}</span>
+        <span className="badge text-bg-danger rounded-pill">{props.data.reps}</span>
         </li>
     </div>
     </div>
