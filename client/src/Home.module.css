@@ -1,17 +1,16 @@
 .heading{
     border: 3.5px groove;
     border-radius: 10px;
-    /* font-size:xx-large; */
-    border-color: rgb(255, 105, 105);
+    border-color: rgb(118, 143, 255);
     padding: 10px;
     justify-content: center;
-    background-color: rgb(177, 9, 9);
+    background-color: #007fe4;
     color: rgb(255, 255, 255);
 }
 
 .body_background {
     color: black;
-    background: repeating-radial-gradient(rgb(135, 221, 255), rgb(66, 124, 155));
-    /* background-color: #007FE4; */
+    height: 100%;
+    background-color: #e1e1e1;
     padding-bottom: 5px;
 }
