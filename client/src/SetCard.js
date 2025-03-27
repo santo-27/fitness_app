@@ -54,17 +54,24 @@ const [showForm, setShowForm] = useState(true)
         <div className='row m-2'>
       
         <form onSubmit={handleSubmit}>
-        <h3 className='col'>{props.set_no}</h3>
-          <label className="form-check-label mx-3" for="flexCheckDefault">
+        <h4 className='col grey'>{props.set_no}.</h4>
+          
+          <>
+          <label className='mx-3'>
+          <input name = "weight " placeholder='' className='col SetCard-input' onChange={handleChange}/> <h6 className="grey">KG</h6>
+          </label>
+          </>
+          <>
+        <label className='mx-3'>
+          <input name="rep_count" placeholder='' className = 'col SetCard-input' onChange={handleChange}/> <h6 className="grey">x</h6>
+        </label>
+        </>
+        <>
+        <label className="form-check-label mx-3" for="flexCheckDefault">
           <input className="form-check-input col mx-2" type="checkbox" value="" id="flexCheckDefault" onChange={handleSubmit}/>
             completed
           </label>
-          <label className='mx-3'>weight: 
-          <input name = "weight" placeholder='weight' className='col SetCard-input' onChange={handleChange}/>
-          </label>
-        <label className='mx-3'>
-          reps: <input name="rep_count" placeholder='reps' className = 'col SetCard-input' onChange={handleChange}/>
-        </label>
+        </>
         
         
 

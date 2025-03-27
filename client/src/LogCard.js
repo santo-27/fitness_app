@@ -19,9 +19,28 @@ function LogCard(props) {
                 {/* <div className="dropdown-item" > */}
                     {Array.from({ length: props.data.sets }).map((_, index) => {
                         return (
-                            
+                                
+                                <>
+                                {index === 0 ? <div>
+                                    <div className='main'>
+                                    <h4 style={{display:'inline'}}>
+                                    SET
+                                    </h4>
+                                    <h4 style={{display:'inline'}}>
+                                    WEIGHT
+                                    </h4>
+                                    <h4 style={{display:'inline'}}>
+                                    REPS
+                                    </h4>
+                                    <h4>
+                                        Completed
+                                    </h4>
+
+                                </div>
+                                </div> : <></>}
+                                
                                 <SetCard data = {props.data} set_no = {index+1}/>
-                            
+                                </>
                                 )
                     })}
                 {/* </div> */}

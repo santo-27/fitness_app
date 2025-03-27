@@ -6,6 +6,7 @@ import axios from "axios";
 import { redirect , useNavigate} from "react-router-dom";
 import AuthContext from '../authContext';
 import "./Login.css"
+import loginImage from './assets/LoginPageImg.png';
 
 
 function Login() {
@@ -69,15 +70,20 @@ function Login() {
 
   return (
     
-    <div>
+    <div className="main">
+    <div >
         <Header />
         {!(user && user.email) ? (<div className='py-5 px-5 justify-content-center '>
         {/* <Row> */}
         {/* <Col md={6}> */}
-            
+
+         <div className='formDiv'>
+         <div className="heading">
+              Log In
+         </div>
             <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className=''>Email address :  </Form.Label>
+            <Form.Label className=''>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" name='email' value={formData.email} onChange={handleChange}/>
            
             <Form.Text className="text-muted">
@@ -86,18 +92,19 @@ function Login() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label >Password : </Form.Label>
+            <Form.Label >Password</Form.Label>
             <Form.Control type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange}/>
             
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="larger-text-button">
             Submit
         </Button>
         {message && <p>{message}</p>}
         </Form>
+        </div>
     {/* </Col> */}
  
     {/* </Row> */}
@@ -108,6 +115,12 @@ function Login() {
 
       </div>  
       )}
+      
+    </div>
+
+    <div class = "image">
+      <img src={loginImage} alt="img not loaded"></img>
+    </div>
     </div>
   )
 }
