@@ -10,7 +10,13 @@
 
 .body_background {
     color: black;
-    height: 100%;
-    background-color: #e1e1e1;
+    min-height: 100vh;
+    background-color: rgb(255, 0, 0);
     padding-bottom: 5px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(154, 154, 154);
 }

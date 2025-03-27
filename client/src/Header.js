@@ -14,9 +14,9 @@ import './Home.module.css'
 function Header() {
   return (
     <div>
-      <Navbar expand="lg" style={{background: 'linear-gradient( to right,rgb(200, 200, 200),rgb(218, 218, 218),rgb(200, 200, 200))'}}>
+      <Navbar expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#home">app-name</Navbar.Brand>
+          <Navbar.Brand href="#home">Fitrack</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
