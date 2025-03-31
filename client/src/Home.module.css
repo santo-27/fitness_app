@@ -1,18 +1,15 @@
 .heading{
-    border: 3.5px groove;
-    border-radius: 10px;
-    border-color: rgb(118, 143, 255);
+    border: 2px;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 3px;
+    border-color: black;
     padding: 10px;
     justify-content: center;
-    background-color: #007fe4;
-    color: rgb(255, 255, 255);
-}
-
-.body_background {
-    color: black;
-    min-height: 100vh;
-    background-color: rgb(255, 0, 0);
-    padding-bottom: 5px;
+    background-color: #007FE4;
+    color: white;
+    text-align: center;
+    
 }
 
 html, body {
