@@ -111,14 +111,14 @@ function Login() {
     </div>) : (
       <div className='Login-center'>
         <p>Do u wanna logout</p>
-        <button type="button" class="btn btn-danger" onClick={handleLogout}>Logout</button>
+        <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
 
       </div>  
       )}
       
     </div>
 
-    <div class = "image">
+    <div className = "image">
       <img src={loginImage} alt="img not loaded"></img>
     </div>
     </div>

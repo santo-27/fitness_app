@@ -1,16 +1,13 @@
 .heading{
-    border: 3px groove;
-    border-radius: 10px;
-    /* margin: 5px; */
-    border-color: rgb(67, 2, 105);
+    border: 2px;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 3px;
+    border-color: black;
     padding: 10px;
     justify-content: center;
-    background-color: rgb(177, 9, 9);
-    color: rgb(255, 255, 255);
-}
-
-.body_background {
-    color: black;
-    background: repeating-radial-gradient(rgb(135, 221, 255), rgb(66, 124, 155));
-    /* background: rgb(178, 159, 255); */
+    background-color: #007FE4;
+    color: white;
+    text-align: center;
+    
 }

@@ -1,10 +1,15 @@
 .card{
-    color: black;
-    background-color: rgb(255, 242, 217);
-    border: 5px rgb(255, 183, 0) outset ;
-    border-radius: 100px;
+    /* background-color: wheat; */
+    border-radius: 10px;
     margin: 10px;
     padding: 10px;
     margin-left: 20px;
    
+}
+
+.content1{
+    /* padding: 0; */
+    margin: 10px;
+    display: inline;
+    font-size: 20px;
 }
