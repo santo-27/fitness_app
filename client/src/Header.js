@@ -14,7 +14,7 @@ import './Home.module.css'
 function Header() {
   return (
     <div>
-      <Navbar expand="lg" style={{background: 'linear-gradient( to right,rgb(66, 124, 155),rgb(115, 184, 211),rgb(66, 124, 155))'}}>
+      <Navbar expand="lg" style={{background: 'linear-gradient( to right,rgb(200, 200, 200),rgb(218, 218, 218),rgb(200, 200, 200))'}}>
         <Container fluid>
           <Navbar.Brand href="#home">app-name</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

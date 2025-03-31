@@ -12,6 +12,7 @@ import Progress from './Progress.js';
 import Assistant from './Assistant/Assistant.js';
 import Feedback from './Feedback/Feedback.js';
 import "./App.css"
+import './Home.module.css'
 
 function App() {
   return (
