@@ -2,10 +2,12 @@
     border: 2px;
     border-radius: 5px;
     margin: 5px;
+    margin-bottom: 3px;
     border-color: black;
     padding: 10px;
     justify-content: center;
-    background-color: rgb(180, 26, 26);
+    background-color: #007FE4;
     color: white;
+    text-align: center;
     
 }

@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import AuthContext from './authContext';
 import GoalShow from './GoalShow/GoalShow';
-import HomeCSS from './Home.module.css'
+import HomeCSS from './Home.module.css';
+import "./Home.css";
 
 // import Idiot from './idiot_error';
 
@@ -17,7 +18,7 @@ function Home() {
   const navigate = useNavigate();
   const [new_user, setStatus] = useState(true);
   const[res, setRes] = useState([]);
-  const days= ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const days= ['Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
   const get_data = async (email) => {
     //THIS WORKS FINE (COMMENTING FOR THE SAKE OF FRONTEND)
@@ -31,7 +32,7 @@ function Home() {
     {
       "id": 1,
       "email": "alex.johnson@example.com",
-      "day": "monday",
+      "day": "Monday",
       "sets": 3,
       "reps": 12,
       "workout": "bench press"
@@ -87,7 +88,7 @@ function Home() {
     {
       "id": 8,
       "email": "ava.martin@example.com",
-      "day": "monday",
+      "day": "Monday",
       "sets": 3,
       "reps": 15,
       "workout": "lunges"
@@ -127,7 +128,7 @@ function Home() {
     {
       "id": 13,
       "email": "jacob.king@example.com",
-      "day": "monday",
+      "day": "Monday",
       "sets": 4,
       "reps": 10,
       "workout": "cable rows"
@@ -183,7 +184,7 @@ function Home() {
     {
       "id": 20,
       "email": "charlotte.robinson@example.com",
-      "day": "monday",
+      "day": "Monday",
       "sets": 3,
       "reps": 15,
       "workout": "dumbbell lunges"
@@ -235,36 +236,36 @@ function Home() {
 
   
   return (
-    <div>
+    <div className="mainDiv">
         
         <Header/>
-        
+        <div className='workSpace'>
         {user ? ( new_user ? (
           <div>
             <h1>hello new user</h1>
           </div>
         ) : (
-          <div >
-            <h2 className={HomeCSS.heading}>Your plan for the day is:</h2>
+          <div className='mainDiv'>
+            <h2 className={HomeCSS.heading}>Workout Plan</h2>
             {/* <ol class="list-group list-group-numbered"> */}
             {days.map((day, j) => {
               // return 
               count = 0;
-              
-                
                 return(
-                  <div>
-                    <div><p className='Home-day-style motserrrat'>{day} : </p></div>
+                  <div className="daySection">
+                    <div><p className='daySection day'>{day} </p></div>
+                    <div className='daySection content'>
                     {
                       res.map((item, i) => {
                         if(item.day === day){
                           return (
-                            <div>
+                            <div className = "dayContent">
                             <GoalShow data={item} index={i} />
                             </div>
                           )
                         }}
                     )}
+                    </div>
                   </div>
                 )})}
 
@@ -288,6 +289,7 @@ function Home() {
         
         </div>
       )} 
+      </div>
         
         
         
