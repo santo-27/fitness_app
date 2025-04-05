@@ -25,9 +25,9 @@ function LogWorkout() {
 
   const get_data = async (email) => {
     //THIS WAS COMMENTED FOR THE SAKE OF FRONT END
-    // const response = await axios.post("/workout_plan", {email:email})
-    // return response.data
-    // console.log(response.data)
+    const response = await axios.post("/workout_plan", {email:email})
+    return response.data
+    console.log(response.data)
     //END OF COMMENT
 
 

@@ -5,7 +5,7 @@ import pg from "pg";
 import {GoogleGenerativeAI} from "@google/generative-ai"
 
 
-const gemini_key = "AIzaSyB6LHvWtiUSaqT6zEbaeScUJv6YzOovw8Q"
+const gemini_key = "AIzaSyAox7Y2K4lEgWtDzBckkLqLEVCJJJx7yiQ"
 const genAI = new GoogleGenerativeAI(gemini_key);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
@@ -20,7 +20,6 @@ const client = new Client( {
 });
 
 
-   
 
 // await client.connect();
 
@@ -153,6 +152,15 @@ app.post("/gemini_prompt", (req, res) => {
     }
     get_gemini(req.body.prompt)
     
+})
+
+app.post("/feedbackPost", (req, res) => {
+    const get_workoutdata = async (data) => {
+        const response = await client.query("INSERT INTO reviews(user_email, user_name, stars, message_user) VALUES($1, $2, $3 ,$4)", [data.email, data.name, data.stars, data.review])
+        // const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
+        res.json({response:response});
+    }
+    get_workoutdata(req.body)
 })
 
 app.listen(port, ()=> {

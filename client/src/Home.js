@@ -9,7 +9,7 @@ import GoalShow from './GoalShow/GoalShow';
 import HomeCSS from './Home.module.css';
 import "./Home.css";
 
-// import Idiot from './idiot_error';
+
 
 
 function Home() {
@@ -17,13 +17,13 @@ function Home() {
   const navigate = useNavigate();
   const [new_user, setStatus] = useState(true);
   const[res, setRes] = useState([]);
-  const days= ['Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const days= ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
   const get_data = async (email) => {
     //THIS WORKS FINE (COMMENTING FOR THE SAKE OF FRONTEND)
-    // const response = await axios.post("/workout_plan", {email:email})
-    // console.log( response.data)
-    // return response.data
+    const response = await axios.post("/workout_plan", {email:email})
+    console.log( response.data)
+    return response.data
 
     //UNCOMMENT WHEN FRONTEND IS COMPLETED
     var front_data = {

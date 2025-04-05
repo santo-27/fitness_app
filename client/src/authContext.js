@@ -15,12 +15,12 @@ export const AuthProvider = ({ children }) => {
       // FOR THE SAKE OF FRONTENDD
 
       // COMMENTED(WORKS)
-      // const response = await axios.post('/api/login', { email, password });
-      // console.log(response)
-      // setUser(response.data.user);
+      const response = await axios.post('/api/login', { email, password });
+      console.log(response)
+      setUser(response.data.user);
 
       //FOR EASE OF USE FOR FRONTEND
-      setUser({email:'sample@gmail.com'})
+      // setUser({email:'sample@gmail.com'})
       //COMMENT THIS IN FUTUREE
     } catch (error) {
       console.error('Error logging in:', error);
