@@ -4,7 +4,7 @@ import SetCard from './SetCard';
 import './LogCard.css'
 
 function LogCard(props) {
-    
+    console.log(props)
 
     
   return (

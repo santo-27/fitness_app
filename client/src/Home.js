@@ -8,22 +8,23 @@ import AuthContext from './authContext';
 import GoalShow from './GoalShow/GoalShow';
 import HomeCSS from './Home.module.css';
 import "./Home.css";
+import TrainerHeader from './TrainerHeader';
 
-// import Idiot from './idiot_error';
+
 
 
 function Home() {
-  const {user} = useContext(AuthContext);
+  const {user, userType} = useContext(AuthContext);
   const navigate = useNavigate();
   const [new_user, setStatus] = useState(true);
   const[res, setRes] = useState([]);
-  const days= ['Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const days= ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
   const get_data = async (email) => {
     //THIS WORKS FINE (COMMENTING FOR THE SAKE OF FRONTEND)
-    // const response = await axios.post("/workout_plan", {email:email})
-    // console.log( response.data)
-    // return response.data
+    const response = await axios.post("/workout_plan", {email:email})
+    console.log( response.data)
+    return response.data
 
     //UNCOMMENT WHEN FRONTEND IS COMPLETED
     var front_data = {
@@ -211,22 +212,17 @@ function Home() {
     if(user){
     
       get_data(user.email).then(response => {
-     
+
         setRes(response.rows);
-
-        
-
 
         if(parseInt(response.nums_rows) > 0){
           setStatus(false);
-          
-      }
+        }
       })
-      
   }
   }, [new_user])
   
-  // const [message, setmsg] = useState("");
+
   
   var count = 0;
 
@@ -237,7 +233,7 @@ function Home() {
   return (
     <div className="mainDiv">
         
-        <Header/>
+        {userType == 'user' ? <Header/> : <TrainerHeader />}
         <div className='workSpace'>
         {user ? ( new_user ? (
           <div>

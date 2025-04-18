@@ -11,8 +11,10 @@ import LogWorkout from './LogWorkout';
 import Progress from './Progress.js';
 import Assistant from './Assistant/Assistant.js';
 import Feedback from './Feedback/Feedback.js';
-import "./App.css"
-import './Home.module.css'
+import TrainerLogin from './Login/TrainerLogin.js';
+import "./App.css";
+import './Home.module.css';
+import TrainerWorkoutForm from './TrainerWorkoutFrom.js';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path='/progress' element={<Progress />} />
         <Route path='/assistant' element={<Assistant />} />
         <Route path='/feedback' element={<Feedback />} />
+        <Route path = "/trainerLogin" element={<TrainerLogin />} />
+        <Route path='/trainerWorkout' element={<TrainerWorkoutForm />} />
       </Routes>
       </AuthProvider>
     </div>

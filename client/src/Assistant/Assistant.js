@@ -55,7 +55,7 @@ function Assistant() {
         {/* <p>{chats}</p> */}
         {chats.length ? <div>
           {chats.map((item,i) => {
-            return(<div >
+            return(<div key={i}>
               <Row>
                 {/* <Col> */}
                 <div className='d-flex flex-row-reverse'>
