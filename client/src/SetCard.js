@@ -11,7 +11,7 @@ import AuthContext from './authContext';
 function SetCard(props) {
   const {user} = useContext(AuthContext)
   const [formdata, setForm] = useState({
-    workout : "",
+    workout : props.data.workout,
     weight : 0,
     set_no : 0,
     rep_count: 0
@@ -58,7 +58,7 @@ const [showForm, setShowForm] = useState(true)
           
           <>
           <label className='mx-3'>
-          <input name = "weight " placeholder='' className='col SetCard-input' onChange={handleChange}/> <h6 className="grey">KG</h6>
+          <input name = "weight" placeholder='' className='col SetCard-input' onChange={handleChange}/> <h6 className="grey">KG</h6>
           </label>
           </>
           <>

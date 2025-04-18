@@ -7,7 +7,7 @@ import { redirect , useNavigate} from "react-router-dom";
 import AuthContext from '../authContext';
 import "./Login.css"
 import loginImage from './assets/LoginPageImg.png';
-
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await login(formData.email, formData.password);
+        await login(formData.email, formData.password, "user");
 
         if(user && user.email){
           setmsg('Login successful');
@@ -99,6 +99,7 @@ function Login() {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
+          <a href='/trainerLogin'>Trainer Login</a>
         <Button variant="primary" type="submit" className="larger-text-button">
             Submit
         </Button>

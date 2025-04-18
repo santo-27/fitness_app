@@ -5,7 +5,7 @@ import pg from "pg";
 import {GoogleGenerativeAI} from "@google/generative-ai"
 
 
-const gemini_key = "AIzaSyB6LHvWtiUSaqT6zEbaeScUJv6YzOovw8Q"
+const gemini_key = ""
 const genAI = new GoogleGenerativeAI(gemini_key);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
@@ -19,11 +19,7 @@ const client = new Client( {
     database: 'fit_web',
 });
 
-
-   
-
 // await client.connect();
-
 
 const app = express();
 const port = 6000;
@@ -39,7 +35,6 @@ app.post('/api/login', (req, res) => {
     const {email, password} = req.body;
 
     const login = async(email, password) => {
-        // await 
         try{
             
             const response = await client.query("SELECT * FROM users WHERE email = $1", [email]);
@@ -60,16 +55,32 @@ app.post('/api/login', (req, res) => {
         catch(err){
             console.log(err);
         }
-        // await client.end()
-        
     }
-
     login(email, password);
+})
 
-    
+app.post('/api/trainerlogin', (req, res) => {
+    const {email, password} = req.body;
 
-   
-
+    const login = async(email, password) => {
+        try{
+            
+            const response = await client.query("SELECT * FROM trainer WHERE email = $1", [email]);
+            if(response  && response.rowCount > 0){
+                if(response.rows[0].user_password == password){
+                    res.json({user:{email:email}, msg:"Welcome back"});
+                }
+                else{
+                    res.json({user:{email:null}, msg:"Incorrect password"});
+                }
+            }
+            
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+    login(email, password);
 })
 
 app.post('/workout_plan', (req, res) => {
@@ -103,7 +114,7 @@ app.post('/newworkout', (req, res) => {
             const response = await client.query("INSERT INTO workouts(email, workout, sets, reps, day) VALUES($1, $2, $3, $4, $5)", [data.email, data.name, data.set, data.rep, data.day.toLowerCase()]);
             // return response;
             console.log(response);
-
+            
         }
         catch(err){
             console.log(err);
@@ -137,7 +148,7 @@ app.post("/workoutdata", (req, res) => {
         const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
         res.json({response:response});
     }
-    get_workoutdata(req.body.email, req.body.workout)
+    get_workoutdata(req.body.email, req.body.workout);
 });
 
 app.post("/gemini_prompt", (req, res) => {
@@ -145,9 +156,9 @@ app.post("/gemini_prompt", (req, res) => {
         var res1 = await model.generateContent(prompt)
         console.log("hey");
         console.log(res1);
-        var res2 = await res1.response
-        var text = res2.text()
-        console.log(text)
+        var res2 = await res1.response;
+        var text = res2.text();
+        console.log(text);
         res.json({result:text});
     
     }
@@ -155,9 +166,35 @@ app.post("/gemini_prompt", (req, res) => {
     
 })
 
-app.listen(port, ()=> {
-    console.log(`listening at port ${port}`);
+app.post("/feedbackPost", (req, res) => {
+    const feedback = async (data) => {
+        const response = await client.query("INSERT INTO reviews(user_email, user_name, stars, message_user) VALUES($1, $2, $3 ,$4)", [data.email, data.name, data.stars, data.review])
+        // const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
+        res.json({response:response});
+    }
+    feedback(req.body)
+})
+
+app.get("/feedbacks" , (req, res) => {
+    const getFeedback = async (data) => {
+        const response = await client.query("SELECT * FROM reviews")
+        // const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
+        res.json({response:response});
+    }
+    getFeedback(req.body)
+})
+
+app.get("/users" , (req, res) => {
+    const getFeedback = async () => {
+        const response = await client.query("SELECT email FROM users")
+        // const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
+        res.json({response:response});
+    }
+    getFeedback()
 })
 
 
 
+app.listen(port, ()=> {
+    console.log(`listening at port ${port}`);
+})
