@@ -13,7 +13,8 @@
 }
 
 html, body {
-    height: 100%;
+    height: 100vh;
+    width: 100%;
     margin: 0;
-    background-color: rgb(154, 154, 154);
+    background-color: rgb(220, 174, 174);
 }
