@@ -6,18 +6,30 @@ const AuthContext = createContext();
 
 
 export const AuthProvider = ({ children }) => {
+  const [userType, setUserType] = useState(null);
   const [user, setUser] = useState(null);
   
 
 
-  const login = async (email, password) => {
+  const login = async (email, password, userType) => {
     try {
       // FOR THE SAKE OF FRONTENDD
 
       // COMMENTED(WORKS)
-      const response = await axios.post('/api/login', { email, password });
-      console.log(response)
-      setUser(response.data.user);
+      if(userType == "user"){
+        const response = await axios.post('/api/login', { email, password });
+        console.log(response);
+        setUser(response.data.user);
+        setUserType("user");
+      }
+
+      else if(userType == "trainer"){
+        const response = await axios.post('/api/trainerlogin', { email, password });
+        console.log(response);
+        setUser(response.data.user);
+        setUserType("trainer");
+      }
+      
 
       //FOR EASE OF USE FOR FRONTEND
       // setUser({email:'sample@gmail.com'})
@@ -33,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{userType, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
