@@ -17,7 +17,7 @@ function LogWorkout() {
     4:'thursday',
     5: 'friday',
     6: 'saturday',
-    7: 'sunday'
+    0: 'sunday'
   }
   const d = new Date();
   let day = d.getDay();
@@ -219,7 +219,7 @@ function LogWorkout() {
               clean_data.push(raw_data[i])
             }
           }
-          console.log(clean_data.length)
+
           changeData(clean_data)
 
         }

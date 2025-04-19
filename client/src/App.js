@@ -14,7 +14,7 @@ import Feedback from './Feedback/Feedback.js';
 import TrainerLogin from './Login/TrainerLogin.js';
 import "./App.css";
 import './Home.module.css';
-import TrainerWorkoutForm from './TrainerWorkoutFrom.js';
+import TrainerWorkoutForm from './TrainerWorkoutForm.js';
 import TrainerProgress from './TrainerProgress.js';
 import AdminLogin from './Login/AdminLogin.js';
 import NewTrainer from './NewTrainer.js';
