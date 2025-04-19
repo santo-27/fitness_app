@@ -6,8 +6,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import {Row} from 'react-bootstrap';
-import './Header.css'
-import './Home.module.css'
+import './Header.css';
+import './Home.module.css';
 
 function TrainerHeader() {
   return (
@@ -18,18 +18,11 @@ function TrainerHeader() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-
-            <Nav.Link as={Link} to="/trainerWorkout">Add new workout</Nav.Link>
-
-              <Nav.Link as={Link} to="/assistant">Ai Assistant</Nav.Link>
-
-
-
-
+                <Nav.Link as={Link} to="/trainerWorkout">Add new workout</Nav.Link>
+                <Nav.Link as={Link} to="/newUser">Add New User</Nav.Link>
+                <Nav.Link as={Link} to="/viewData">View User Info</Nav.Link>
                 <Nav.Link as={Link} to='/trainerProgress'>Progress</Nav.Link>
-
                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
-
             </Nav>
           </Navbar.Collapse>
         </Container>

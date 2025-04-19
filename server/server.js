@@ -217,6 +217,17 @@ app.get("/users" , (req, res) => {
     getFeedback()
 })
 
+app.get("/allInfoUsers" , (req, res) => {
+    const getFeedback = async () => {
+        const response = await client.query("SELECT * FROM users")
+        // const response = await client.query("SELECT * FROM workouttrack WHERE user_email = $1 AND workout = $2", [email, workout])
+        res.json({response:response});
+    }
+    getFeedback()
+})
+
+
+
 app.post("/addTrainer" , (req, res) => {
     console.log(req.body)
     const addTrainer = async (data) => {
@@ -227,6 +238,15 @@ app.post("/addTrainer" , (req, res) => {
     addTrainer(req.body)
 })
 
+app.post("/addUser", (req, res) => {
+    console.log(req.body)
+    const addUser = async (data) => {
+        const response = await client.query("INSERT INTO users(email, user_password, user_name, health_issues, age, gender) VALUES($1, $2, $3, $4, $5, $6)", [data.email, data.password, data.user_name, data.health_issues, data.age, data.gender])
+        res.json({response:response});
+    }
+
+    addUser(req.body)
+})
 
 
 app.listen(port, ()=> {

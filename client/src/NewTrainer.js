@@ -37,7 +37,7 @@ export default function NewTrainer() {
 
   const postData = async (data) => {
     const res = await axios.post("/addTrainer", formData);
-    
+
   }
 
   return (
@@ -45,9 +45,9 @@ export default function NewTrainer() {
     <AdminHeader />
     
     <div className="w-full min-h-screen bg-white pt-24">
-      {/* Main container - pushed down to accommodate header */}
+
       <div className="w-full max-w-4xl mx-auto px-6 pb-16">
-        {/* Title section with sharp elements */}
+
         <div className="relative mb-12 px-4">
           <div className="absolute left-0 top-0 w-2 h-full bg-black"></div>
           <h1 className="text-5xl font-black tracking-tight text-black uppercase pl-6">
@@ -56,14 +56,14 @@ export default function NewTrainer() {
           <div className="mt-3 h-2 w-32 bg-black ml-6"></div>
         </div>
         
-        {/* Form with sharp elements */}
+
         <div className="bg-gray-100 p-8 relative">
           <div className="absolute top-0 right-0 w-0 h-0 border-t-16 border-r-16 border-t-black border-r-transparent"></div>
           <div className="absolute bottom-0 left-0 w-0 h-0 border-b-16 border-l-16 border-b-black border-l-transparent"></div>
           
           <form className="w-full" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Email field with sharp styling */}
+
               <div className="relative">
                 <label htmlFor="email" className="block text-base font-bold text-gray-800 uppercase tracking-widest mb-3">
                   TRAINER EMAIL
@@ -83,7 +83,7 @@ export default function NewTrainer() {
                 </div>
               </div>
               
-              {/* Password field with sharp styling */}
+
               <div className="relative">
                 <label htmlFor="password" className="block text-base font-bold text-gray-800 uppercase tracking-widest mb-3">
                   TRAINER PASSWORD
@@ -104,7 +104,7 @@ export default function NewTrainer() {
               </div>
             </div>
             
-            {/* Sharp, angular button */}
+
             <div className="mt-12 relative max-w-xs mx-auto">
               <button
                 type="submit"
@@ -120,7 +120,7 @@ export default function NewTrainer() {
                     PROCESSING
                   </span>
                 ) : "ADD TRAINER"}
-                {/* Sharp corner elements */}
+
                 <div className="absolute top-0 right-0 w-4 h-4 bg-gray-300"></div>
                 <div className="absolute bottom-0 left-0 w-4 h-4 bg-gray-300"></div>
               </button>
