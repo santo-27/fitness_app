@@ -15,6 +15,9 @@ import TrainerLogin from './Login/TrainerLogin.js';
 import "./App.css";
 import './Home.module.css';
 import TrainerWorkoutForm from './TrainerWorkoutFrom.js';
+import TrainerProgress from './TrainerProgress.js';
+import AdminLogin from './Login/AdminLogin.js';
+import NewTrainer from './NewTrainer.js';
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
         <Route path='/feedback' element={<Feedback />} />
         <Route path = "/trainerLogin" element={<TrainerLogin />} />
         <Route path='/trainerWorkout' element={<TrainerWorkoutForm />} />
+        <Route path = "/trainerProgress" element={<TrainerProgress />} />
+        <Route path = "/adminLogin" element={<AdminLogin />} />
+        <Route path = "/addNewTrainer" element={<NewTrainer />} />
       </Routes>
       </AuthProvider>
     </div>

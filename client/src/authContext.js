@@ -29,6 +29,13 @@ export const AuthProvider = ({ children }) => {
         setUser(response.data.user);
         setUserType("trainer");
       }
+
+      else if(userType == "admin"){
+        const response = await axios.post('/api/adminLogin', { email, password });
+        console.log(response);
+        setUser(response.data.user);
+        setUserType("admin");
+      }
       
 
       //FOR EASE OF USE FOR FRONTEND

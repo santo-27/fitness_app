@@ -15,7 +15,7 @@ function Login() {
         password: ''
     })
     console.log('hey');
-    const [message, setmsg] = useState('')
+    const [message, setmsg] = useState('');
     const navigate = useNavigate();
     const { login, user, logout } = useContext(AuthContext);
 
@@ -100,6 +100,7 @@ function Login() {
             <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
           <a href='/trainerLogin'>Trainer Login</a>
+          <a href='/adminLogin'>Admin Login</a>
         <Button variant="primary" type="submit" className="larger-text-button">
             Submit
         </Button>

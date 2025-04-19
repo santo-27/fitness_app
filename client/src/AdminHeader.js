@@ -9,7 +9,7 @@ import {Row} from 'react-bootstrap';
 import './Header.css'
 import './Home.module.css'
 
-function TrainerHeader() {
+function AdminHeader() {
   return (
     <div>
       <Navbar expand="lg">
@@ -19,14 +19,14 @@ function TrainerHeader() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
 
-            <Nav.Link as={Link} to="/trainerWorkout">Add new workout</Nav.Link>
+            <Nav.Link as={Link} to="/addNewTrainer">Add New Trainer</Nav.Link>
 
               <Nav.Link as={Link} to="/assistant">Ai Assistant</Nav.Link>
 
 
 
 
-                <Nav.Link as={Link} to='/trainerProgress'>Progress</Nav.Link>
+
 
                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
 
@@ -39,4 +39,4 @@ function TrainerHeader() {
   );
 }
 
-export default TrainerHeader;
+export default AdminHeader;

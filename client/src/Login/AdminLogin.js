@@ -9,8 +9,9 @@ import "./Login.css"
 import loginImage from './assets/LoginPageImg.png';
 import { Link } from 'react-router-dom';
 import TrainerHeader from '../TrainerHeader';
+import AdminHeader from '../AdminHeader';
 
-function TrainerLogin() {
+function AdminLogin() {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -30,7 +31,7 @@ function TrainerLogin() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await login(formData.email, formData.password, "trainer");
+        await login(formData.email, formData.password, "admin");
 
         if(user && user.email){
           setmsg('Login successful');
@@ -73,7 +74,7 @@ function TrainerLogin() {
     
     <div className="main">
     <div >
-        <TrainerHeader />
+        <AdminHeader />
         {!(user && user.email) ? (<div className='py-5 px-5 justify-content-center '>
         {/* <Row> */}
         {/* <Col md={6}> */}
@@ -101,7 +102,7 @@ function TrainerLogin() {
             <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <a href='/'>User Login</a>
-        <a href='/adminLogin'>Admin Login</a>
+        <a href='/trainerLogin'>Trainer Login</a>
         <Button variant="primary" type="submit" className="larger-text-button">
             Submit
         </Button>
@@ -128,4 +129,4 @@ function TrainerLogin() {
   )
 }
 
-export default TrainerLogin;
+export default AdminLogin;

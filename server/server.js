@@ -83,6 +83,30 @@ app.post('/api/trainerlogin', (req, res) => {
     login(email, password);
 })
 
+app.post('/api/adminLogin', (req, res) => {
+    const {email, password} = req.body;
+
+    const login = async(email, password) => {
+        try{
+            
+            const response = await client.query("SELECT * FROM admin WHERE email = $1", [email]);
+            if(response  && response.rowCount > 0){
+                if(response.rows[0].user_password == password){
+                    res.json({user:{email:email}, msg:"Welcome back"});
+                }
+                else{
+                    res.json({user:{email:null}, msg:"Incorrect password"});
+                }
+            }
+            
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+    login(email, password);
+})
+
 app.post('/workout_plan', (req, res) => {
     const data = req.body
     const email = data.email;
@@ -191,6 +215,16 @@ app.get("/users" , (req, res) => {
         res.json({response:response});
     }
     getFeedback()
+})
+
+app.post("/addTrainer" , (req, res) => {
+    console.log(req.body)
+    const addTrainer = async (data) => {
+        const response = await client.query("INSERT INTO trainer(email, user_password) VALUES($1, $2)", [data.email, data.password])
+        res.json({response:response});
+    }
+
+    addTrainer(req.body)
 })
 
 

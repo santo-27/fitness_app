@@ -61,6 +61,7 @@ Button{
 
 .larger-text-button {
     font-size: 20px; /* Or your preferred size */
+    background-color: black;
   }
 
 div.main{
