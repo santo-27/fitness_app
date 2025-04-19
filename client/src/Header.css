@@ -1,7 +1,65 @@
-.headerStyles{
-    background-color: gray;
-}
+/* .mainDivNavBar{
+    /* background-color */
+    /* background-color:red; */
+/* }  */
 
+/* .headerStyles{
+    background-color: gray;
+} */
+
+.red-navbar {
+    background-color: #f8fafa !important;  /* Solid red */
+    border-bottom: solid 1px gray;
+  }
+  
+  /* Force children to inherit red bg */
+  .red-navbar .navbar-nav,
+  .red-navbar .nav-link,
+  .red-navbar .navbar-brand,
+  .red-navbar .dropdown-menu,
+  .red-navbar .nav-item,
+  .red-navbar .navbar-collapse,
+  .red-navbar .nav-dropdown,
+  .red-navbar .dropdown-toggle,
+  .red-navbar .dropdown-item ,
+  .red-navbar .container-fluid{
+    background-color:transparent;
+    color: rgb(29, 1, 1) !important;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .navbar-brand-custom {
+    font-size: 100px; /* Change this value as needed */
+    font-weight: bold; /* Optional */
+    display: flex;
+    align-items: center;
+  }
+/* 
+  
+  .red-navbar .navbar-brand,
+  .red-navbar .nav-link,
+  .red-navbar .dropdown-toggle,
+  .red-navbar .dropdown-item {
+    color: black !important;
+    background-color: red;
+  }
+  
+  .red-navbar .nav-link:hover,
+  .red-navbar .dropdown-item:hover {
+    color: #ffc107 !important; 
+  }
+  
+  .red-navbar .navbar-toggler {
+    background-color: white !important; 
+  } */
+
+
+  .navbar .navbar-brand-custom {
+    font-size: 2rem !important;
+    font-weight: bold;
+    color: #fff; /* Optional: just so you can see if it's being applied */
+  }
 .Home-day-style{
     color: rgb(0, 0, 0);
     padding-left: 10px;
@@ -20,4 +78,8 @@
     color: black;
     font-weight:600;
     font-size: large;
+}
+
+Nav.Link{
+    font-weight: bold;
 }
