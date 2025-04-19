@@ -101,6 +101,7 @@ function TrainerLogin() {
             <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <a href='/'>User Login</a>
+        <a href='/adminLogin'>Admin Login</a>
         <Button variant="primary" type="submit" className="larger-text-button">
             Submit
         </Button>

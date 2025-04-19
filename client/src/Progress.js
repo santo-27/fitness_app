@@ -7,7 +7,7 @@ import Graph from './Graph'
 
 function Progress() {
     const {user} = useContext(AuthContext)
-    
+    console.log(user);
     const [data, setData] = useState( () => new Set());
 
     const [allData, setAllData] = useState([]);
@@ -54,9 +54,9 @@ function Progress() {
     <div>
         <Header />
         {data.size ? (
-            Array.from(data).map((item) => {
+            Array.from(data).map((item, i) => {
                 return (
-                    <Graph workout = {item} data = {allData} /> 
+                    <Graph key={i} workout = {item} data = {allData} /> 
                 )
             })
         ):(<div></div>)
