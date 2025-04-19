@@ -1,73 +1,55 @@
-.mainDiv{
-    background-color: #EDEAF3;
-}
-
-.workSpace{
-    margin-left: 12.5%;
-    margin-right: 12.5%;
-    
-    background-clip: content-box;
-    
-    
-}
-
-.daySection{
-    
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-top: 0%;
-    margin-bottom: 3%;
-    
-    /* border: solid 1px; */
-    border-radius: 15px;
-    border-width: 5px;
-
-    /* background-color: aliceblue; */
-    background-clip: content-box;
-    
-
-}
-
-.day{
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-radius: 0;
-   
-    /* //padding */
-    padding-left: 10px;
-    
-
-    /* margin */
-    margin: 0;
-    margin-top: 7px;
-    /* margin-left: 5px; */
-
-    /* dimensions */
-    height: 50px;
-    font-size: 25px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bolder;
-    /* alignment */
+.mainDiv {
+    background-color: #f3f2f7;
+    min-height: 100vh;
+    padding-bottom: 30px;
+  }
+  
+  .workSpace {
+    margin: auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #f3f2f7;
+  }
+  
+  .daySection {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); */
+    transition: transform 0.2s ease;
+  }
+  
+  .daySection.content:hover {
+    transform: translateY(-4px);
+  }
+  
+  .day {
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    /* background-color: rgb(38, 38, 38); */
+    padding-bottom: 10px;
+    /* border-bottom: 2px solid #ddd;
+    margin-bottom: 20px; */
+  }
+  
+  .content {
     display: flex;
-    align-items: center; 
-
-
-    background-clip: content-box;
-}
-
-.content{
-    border-width: 0;
-    display: flex;
-    flex-grow: 1fr;
-    gap: 60px;
-    /* justify-content: space-evenly; */
-    /* justify-content: space-between; */
-
-   margin: 0px;
-   margin-left: 5%;
-
-
-   background-clip: content-box;
-
-}
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .dayContent {
+    flex: 1 1 300px;
+    padding: 15px;
+    background: #f3f2f7;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(90, 24, 154, 0.1);
+    transition: 0.3s ease;
+  }
+  
+  .dayContent:hover {
+    background: #f3f2f7;
+    transform: translateY(-5px);
+  }

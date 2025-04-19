@@ -10,15 +10,15 @@ function GoalShow(props) {
       
   // };
   return (
-    <div className="content1">
+    <div className="content1 bg-white">
     <div key = {props.index}>
         {/* <li className="list-group-item d-flex justify-content-between align-items-start card w-50" > */}
         {/* <div className="ms-2 me-auto"> */}
-        <div >
-            <div className="">Workout : {props.data.workout}</div>
+        <div className='bg-white'>
+            <div className="bg-white">Workout : {props.data.workout}</div>
             Sets : {props.data.sets}<br/>
             {/* <span className="badge text-bg-primary rounded-pill">Reps :{props.data.reps}</span> */}
-            <span >Reps :{props.data.reps}</span>
+            <span className='bg-white'>Reps :{props.data.reps}</span>
         </div>
         {/* <br/> */}
         

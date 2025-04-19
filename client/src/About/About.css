@@ -1,9 +1,13 @@
+html,body{
+    background-color: rgb(196, 196, 196);
+}
+
 .content{
     margin: none;
     padding : 10px;
     color: black;
     background-color: rgb(255, 255, 255);
-    text-align: center;
+    text-align: left;
 }
 
 .row{
