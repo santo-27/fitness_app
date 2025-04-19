@@ -9,13 +9,14 @@ import "./Login.css"
 import loginImage from './assets/LoginPageImg.png';
 import { Link } from 'react-router-dom';
 
+
 function Login() {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     })
     console.log('hey');
-    const [message, setmsg] = useState('');
+    const [message, setmsg] = useState('')
     const navigate = useNavigate();
     const { login, user, logout } = useContext(AuthContext);
 
@@ -69,10 +70,11 @@ function Login() {
       }
 
   return (
-    
+    <>
+    <Header />
     <div className="main">
     <div >
-        <Header />
+        
         {!(user && user.email) ? (<div className='py-5 px-5 justify-content-center '>
         {/* <Row> */}
         {/* <Col md={6}> */}
@@ -83,7 +85,7 @@ function Login() {
          </div>
             <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className='font-bebas text-2xl tracking-wide text-black'>Email address</Form.Label>
+            <Form.Label className=''>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" name='email' value={formData.email} onChange={handleChange}/>
            
             <Form.Text className="text-muted">
@@ -92,15 +94,15 @@ function Login() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label className='font-bebas text-2xl tracking-wide text-black' >Password</Form.Label>
-            <Form.Control className='bg-light' type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange}/>
+            <Form.Label >Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange}/>
             
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-          <a href='/trainerLogin'>Trainer Login</a>
-          <a href='/adminLogin'>Admin Login</a>
+        <a href='/trainerLogin'>Trainer Login</a>
+        <a href='/adminLogin'>Admin Login</a>
         <Button variant="primary" type="submit" className="larger-text-button">
             Submit
         </Button>
@@ -113,9 +115,9 @@ function Login() {
     </div>) : (
       // <div className='Login-center'>
       //   <p>Do u wanna logout</p>
-      //   <button type="button" className="btn btn-danger " onClick={handleLogout}>Logout</button>
+      //   <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
 
-      // </div> 
+      // </div>  
       <div className="flex items-center justify-center h-screen">
         <div className="text-center bg-white p-5 h-30 w-50 rounded shadow">
           <p className="mb-3 text-lg font-medium bg-white">Do you wanna logout?</p>
@@ -137,6 +139,8 @@ function Login() {
       <img src={loginImage} alt="img not loaded"></img>
     </div>
     </div>
+
+    </>
   )
 }
 

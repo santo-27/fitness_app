@@ -61,7 +61,7 @@ export default function TrainerWorkoutForm() {
     <div>
       <TrainerHeader />
 
-      <h2 className="text-3xl font-semibold text-gray-800">Create New Workout</h2>
+      <h2 className="text-3xl font-semibold text-gray-800 mt-2">Create New Workout</h2>
       <div className="mt-1 mb-3 h-1 w-20 bg-gray-300 mx-auto"></div>
       <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-xl">
         <form onSubmit={handleSubmit} className="space-y-4 bg-white">

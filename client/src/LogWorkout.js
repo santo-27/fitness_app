@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import AuthContext from './authContext';
 import Header from './Header';
 import LogCard from './LogCard';
+import './LogWorkout.css';
 // import { unstable_useViewTransitionState } from 'react-router-dom';
 
 
@@ -25,9 +26,9 @@ function LogWorkout() {
 
   const get_data = async (email) => {
     //THIS WAS COMMENTED FOR THE SAKE OF FRONT END
-    const response = await axios.post("/workout_plan", {email:email})
-    return response.data
-    console.log(response.data)
+    // const response = await axios.post("/workout_plan", {email:email})
+    // return response.data
+    // console.log(response.data)
     //END OF COMMENT
 
 
@@ -235,8 +236,14 @@ function LogWorkout() {
 
   get_data()
   return (
-    <div className='py-2'>
+    <div>
       <Header />
+      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginLeft: '20%',marginRight:'20%' }} className='LogWorkoutWorkspace'>
+        <h1>Log Workouts</h1>
+        <div style={{ width: "calc(100% + 40px)",marginLeft:"-20px" ,marginRight:"20px"}}>
+          <hr />
+        </div>
     {user ? (
     
         
@@ -260,6 +267,8 @@ function LogWorkout() {
         <h2>Please log in before continuing</h2>
       </div>
     )}
+    </div>
+    </div>
     </div>
     
   )

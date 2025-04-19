@@ -11,7 +11,7 @@ import AuthContext from './authContext';
 function SetCard(props) {
   const {user} = useContext(AuthContext)
   const [formdata, setForm] = useState({
-    workout : props.data.workout,
+    workout : "",
     weight : 0,
     set_no : 0,
     rep_count: 0
@@ -49,29 +49,34 @@ const [showForm, setShowForm] = useState(true)
     
 
   return (
-    <div >
+    <div style={{backgroundColor:"#F8fafa"}}>
       {showForm ? (
-        <div className='row m-2'>
+        <div className='row ' >
       
-        <form onSubmit={handleSubmit}>
-        <h4 className='col grey'>{props.set_no}.</h4>
+        <form className='SetCardForm' onSubmit={handleSubmit}>
+
           
-          <>
+
+          <div style={{ display: "grid", placeItems: "center", height: "auto",  width: "fit-content",}}>
+          <h4 className='col grey'>{props.set_no}.</h4>
+          </div>
+       
+          
+          
           <label className='mx-3'>
-          <input name = "weight" placeholder='' className='col SetCard-input' onChange={handleChange}/> <h6 className="grey">KG</h6>
+          <input name = "weight " placeholder='-' className='col SetCard-input' onChange={handleChange} style={{marginLeft:"35px"}}/> 
           </label>
-          </>
-          <>
+        
+         
         <label className='mx-3'>
-          <input name="rep_count" placeholder='' className = 'col SetCard-input' onChange={handleChange}/> <h6 className="grey">x</h6>
+          <input name="rep_count" placeholder='-' className = 'col SetCard-input' onChange={handleChange} /> 
         </label>
-        </>
-        <>
+       
         <label className="form-check-label mx-3" for="flexCheckDefault">
           <input className="form-check-input col mx-2" type="checkbox" value="" id="flexCheckDefault" onChange={handleSubmit}/>
-            completed
-          </label>
-        </>
+            
+        </label>
+       
         
         
 

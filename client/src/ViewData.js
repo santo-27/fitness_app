@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DisplayData from './DisplayData';
 import TrainerHeader from './TrainerHeader';
-import { Train } from 'lucide-react';
+// import { Train } from 'lucide-react';
 
 const ViewData = () => {
   const [users, setUsers] = useState([]);

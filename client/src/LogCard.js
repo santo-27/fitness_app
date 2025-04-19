@@ -4,13 +4,13 @@ import SetCard from './SetCard';
 import './LogCard.css'
 
 function LogCard(props) {
-    console.log(props)
+    
 
     
   return (
-    <div className='LogCard-card montserrat'>
+    <div className='LogCard-card '>
         {/* <div class="dropdown"> */}
-            <h2 className='LogCard-heading justify-content-center '>{props.data.workout}</h2>
+            <h2 className='LogCard-heading'>{props.data.workout}</h2>
             {/* <button className="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown button */}
             {/* </button> */}
@@ -22,18 +22,18 @@ function LogCard(props) {
                                 
                                 <>
                                 {index === 0 ? <div>
-                                    <div className='main'>
-                                    <h4 style={{display:'inline'}}>
-                                    SET
+                                    <div className='Title'>
+                                    <h4 >
+                                    Set
                                     </h4>
-                                    <h4 style={{display:'inline'}}>
-                                    WEIGHT
+                                    <h4 style={{textAlign:"center" ,position:"relative",left:"-5%"}} >
+                                    Weight
                                     </h4>
-                                    <h4 style={{display:'inline'}}>
-                                    REPS
+                                    <h4 style={{textAlign:"center",position:"relative",left:"5%"}}>
+                                    Reps
                                     </h4>
-                                    <h4>
-                                        Completed
+                                    <h4 style={{textAlign:"center" , textAlign:"right"}}>
+                                    Completed
                                     </h4>
 
                                 </div>
