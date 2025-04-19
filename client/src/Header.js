@@ -26,7 +26,7 @@ function Header() {
               <Nav.Link as={Link} to="/assistant">Ai Assistant</Nav.Link>
               <Nav.Link as={Link} to="/Feedback">Feedback</Nav.Link>
 
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="More" id="basic-nav-dropdown">
                 <NavDropdown.Item as={Link} to='/new_workout'>New Workout</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to='/progress'>Progress</NavDropdown.Item>
                 <NavDropdown.Divider />

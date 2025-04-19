@@ -235,7 +235,7 @@ function LogWorkout() {
 
   get_data()
   return (
-    <div>
+    <div className='py-2'>
       <Header />
     {user ? (
     

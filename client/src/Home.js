@@ -8,20 +8,19 @@ import AuthContext from './authContext';
 import GoalShow from './GoalShow/GoalShow';
 import HomeCSS from './Home.module.css';
 import "./Home.css";
-import TrainerHeader from './TrainerHeader';
 
-
+// import Idiot from './idiot_error';
 
 
 function Home() {
-  const {user, userType} = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
   const navigate = useNavigate();
   const [new_user, setStatus] = useState(true);
   const[res, setRes] = useState([]);
-  const days= ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const days= ['Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
   const get_data = async (email) => {
-    //THIS WORKS FINE (COMMENTING FOR THE SAKE OF FRONTEND)
+    // THIS WORKS FINE (COMMENTING FOR THE SAKE OF FRONTEND)
     const response = await axios.post("/workout_plan", {email:email})
     console.log( response.data)
     return response.data
@@ -212,17 +211,22 @@ function Home() {
     if(user){
     
       get_data(user.email).then(response => {
-
+     
         setRes(response.rows);
+
+        
+
 
         if(parseInt(response.nums_rows) > 0){
           setStatus(false);
-        }
+          
+      }
       })
+      
   }
   }, [new_user])
   
-
+  // const [message, setmsg] = useState("");
   
   var count = 0;
 
@@ -233,7 +237,7 @@ function Home() {
   return (
     <div className="mainDiv">
         
-        {userType == 'user' ? <Header/> : <TrainerHeader />}
+        <Header/>
         <div className='workSpace'>
         {user ? ( new_user ? (
           <div>
@@ -247,14 +251,18 @@ function Home() {
               // return 
               count = 0;
                 return(
-                  <div className="daySection">
-                    <div><p className='daySection day'>{day} </p></div>
-                    <div className='daySection content'>
+                  <div className="daySection bg-white">
+                    <div>
+                      <p  className='text-4xl font-semibold text-gray-800 bg-white'>{day.charAt(0).toUpperCase() + day.slice(1)}
+                      <div className=" mt-2 mb-2 h-1 w-16 bg-gray-300 mx-auto"></div> </p>
+                      
+                      </div>
+                    <div className='daySection content bg-white'>
                     {
                       res.map((item, i) => {
                         if(item.day === day){
                           return (
-                            <div className = "dayContent">
+                            <div className = "dayContent bg-white">
                             <GoalShow data={item} index={i} />
                             </div>
                           )
@@ -279,10 +287,10 @@ function Home() {
         
           
        (
-        <div>
-        <h1>Please log in to access the site.</h1>
-        
+        <div className='flex items-center justify-center h-screen mainDiv'>
+        <h1 className='text-xxl font-bold mainDiv'>Please log in to access the site.</h1>
         </div>
+
       )} 
       </div>
         
@@ -292,4 +300,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;

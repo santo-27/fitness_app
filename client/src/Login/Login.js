@@ -83,7 +83,7 @@ function Login() {
          </div>
             <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className=''>Email address</Form.Label>
+            <Form.Label className='font-bebas text-2xl tracking-wide text-black'>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" name='email' value={formData.email} onChange={handleChange}/>
            
             <Form.Text className="text-muted">
@@ -92,8 +92,8 @@ function Login() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label >Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange}/>
+            <Form.Label className='font-bebas text-2xl tracking-wide text-black' >Password</Form.Label>
+            <Form.Control className='bg-light' type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange}/>
             
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -110,11 +110,24 @@ function Login() {
  
     {/* </Row> */}
     </div>) : (
-      <div className='Login-center'>
-        <p>Do u wanna logout</p>
-        <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
+      // <div className='Login-center'>
+      //   <p>Do u wanna logout</p>
+      //   <button type="button" className="btn btn-danger " onClick={handleLogout}>Logout</button>
 
-      </div>  
+      // </div> 
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-center bg-white p-5 h-30 w-50 rounded shadow">
+          <p className="mb-3 text-lg font-medium bg-white">Do you wanna logout?</p>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+ 
       )}
       
     </div>

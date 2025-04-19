@@ -59,3 +59,13 @@
     font-weight: bold;
   }
   
+  .display_h2{
+    padding: 20px;
+  }
+
+  .display_name{
+    color: black;
+    font-size: large;
+    text-transform: capitalize;
+    padding: 0px 10px;
+  }
